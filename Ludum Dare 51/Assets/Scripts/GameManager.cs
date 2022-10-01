@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     private GameGoal _currentGoal = null;
     public static Action OnScore;
+    public static Action OnNewGoal;
     internal static GameManager Manager;
 
     public static bool PrintALot = true;
@@ -32,6 +33,24 @@ public class GameManager : MonoBehaviour
         return Manager;
     }
 
+    public static string GetCurrentGoalName()
+    {
+        if(GetManager()._currentGoal)
+        {
+            return GetManager()._currentGoal._goalName;
+        }
+        return "";
+    }
+
+    public static string GetCurrentGoalDescription()
+    {
+        if (GetManager()._currentGoal)
+        {
+            return GetManager()._currentGoal._goalDescription;
+        }
+        return "";
+    }
+
     public static int GetPoints()
     {
         return GetManager().score;
@@ -49,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             _currentGoal = goal;
             _currentGoal?.OnEnter();
+            OnNewGoal?.Invoke();
             yield return new WaitForSeconds(goalChangeInterval);
             _currentGoal?.OnExit();
         }
