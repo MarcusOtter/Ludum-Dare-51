@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
-    private GameGoal _currentGoal = null;
-    [SerializeField] private List<GameGoal> _goals;
     public int score;
+    [SerializeField] private List<GameGoal> _goals;
     public float goalChangeInterval = 10f; //Them's the rules!
+
+    private GameGoal _currentGoal = null;
+    public static Action OnScore;
     internal static GameManager Manager;
 
     public static bool PrintALot = true;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
     public static void AddPoints(int points)
     {
         GetManager().score += points;
+        OnScore?.Invoke();
     }
 
     public IEnumerator CycleRules()
