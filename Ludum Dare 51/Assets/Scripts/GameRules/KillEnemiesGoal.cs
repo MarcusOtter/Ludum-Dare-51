@@ -6,14 +6,21 @@ using UnityEngine;
 public class KillEnemiesGoal : GameGoal
 {
     public int PointsPerKill = 1;
+
+    public void GetPointsForKill()
+    {
+        GameManager.AddPoints(PointsPerKill);
+        if (GameManager.PrintALot) Debug.Log($"+{PointsPerKill} points for a kill!");
+    }
+
     public override void OnEnter()
     {
         base.OnEnter();
-        Debug.Log("Do some stuff on enter!");
+        Enemy.OnDie += GetPointsForKill;
     }
     public override void OnExit()
     {
         base.OnExit();
-        Debug.Log("Do some stuff on exit!");
+        Enemy.OnDie -= GetPointsForKill;
     }
 }

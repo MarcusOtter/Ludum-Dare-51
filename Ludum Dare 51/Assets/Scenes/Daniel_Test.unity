@@ -237,10 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goals:
-  - {fileID: 11400000, guid: 981c309c4c46f3c42ba60906b12c1dd8, type: 2}
+  - {fileID: 11400000, guid: 19fabe5b30871424bbb06f7c137384f1, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  points: 0
+  score: 0
   goalChangeInterval: 10
 --- !u!4 &1276202622
 Transform:

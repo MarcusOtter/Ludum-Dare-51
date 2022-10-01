@@ -7,6 +7,8 @@ public class GameGoal : ScriptableObject
 {
     public string _goalName = "Goal";
     public string _goalDescription = "Get points!";
+
+
     public virtual void OnEnter()
     {
         Debug.Log($"Subscribe {_goalName} events!");

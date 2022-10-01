@@ -8,15 +8,16 @@ public class Enemy : MonoBehaviour
     public static Action OnDie;
 
     public int health;
-    public bool TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
-        return health > 0;
+        if (health <= 0) Die();
     }
 
     public void Die()
     {
-        OnDie.Invoke();
+        OnDie?.Invoke();
+        Destroy(gameObject);
         //Do death stuff
     }
 }
