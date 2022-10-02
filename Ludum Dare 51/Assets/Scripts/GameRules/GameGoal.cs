@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MassMurder", menuName = "ScriptableObjects/GameGoals/Test", order = 1)]
-public class GameGoal : ScriptableObject
+public abstract class GameGoal : ScriptableObject
 {
-    public string _goalName = "Goal";
-    public string _goalDescription = "Get points!";
-    public AudioClip _entrySoundEffect;
-    public Color _entryColor = Color.white;
+    public string Name = "Goal";
+    public string Description = "Get points!";
+    public SoundEffect EntrySoundEffect;
+    public Color Color = Color.white;
 
     public virtual void OnEnter()
     {
-        Debug.Log($"Subscribe {_goalName} events!");
+        Debug.Log($"Subscribe {Name} events!");
     }
     public virtual void OnExit()
     {
-        Debug.Log($"Unsubscribe {_goalName} events!");
+        Debug.Log($"Unsubscribe {Name} events!");
     }
-
 }

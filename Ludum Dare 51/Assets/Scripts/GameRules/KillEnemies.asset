@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8f6d0e51089c94f9892f04b5a59553, type: 3}
   m_Name: KillEnemies
   m_EditorClassIdentifier: 
-  _goalName: Kill Enemies
-  _goalDescription: Kill as many enemies as possible!
+  Name: Massacre
+  Description: Kill as many enemies as possible
+  EntrySoundEffect: {fileID: 0}
+  Color: {r: 1, g: 0, b: 0, a: 1}
+  PointsPerKill: 1
