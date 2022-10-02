@@ -33,4 +33,12 @@ public class Enemy : MonoBehaviour
         OnDie?.Invoke();
         //Do death stuff
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerMovement>())
+        {
+            //kill player
+        }
+    }
 }

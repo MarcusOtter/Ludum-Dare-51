@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marcus.unity
     guid: 05aa2a44c263c634f96013d428ffbbd1
+  - enabled: 1
+    path: Assets/Scenes/EnemiesTest.unity
+    guid: e9fb2a5bf779d764c9c44996f50301f6
   m_configObjects: {}
