@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2568849616581854258}
+  - component: {fileID: 1783450313891907367}
+  - component: {fileID: 6764105966084569065}
+  - component: {fileID: 5439978851568694918}
   m_Layer: 0
   m_Name: Rocket launcher
   m_TagString: Untagged
@@ -30,8 +33,55 @@ Transform:
   m_Children:
   - {fileID: 2568849617813542389}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1783450313891907367
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568849616581854259}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6764105966084569065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568849616581854259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd2398ba9c2dd45aacfeee96202fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  followPosition: 1
+  followRotation: 1
+--- !u!114 &5439978851568694918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568849616581854259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87eea76fb424271b00467759e48a5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  fireDelayInSeconds: 0
+  spread: 0
+  shellCasingSpawnPoint: {fileID: 0}
 --- !u!1 &2568849617813542386
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +185,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 35aa39ac28abfb942b528fbf1c6c420e, type: 3}
+--- !u!1 &917813124542397653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 35aa39ac28abfb942b528fbf1c6c420e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9074779762645547357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6925020458581597961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917813124542397653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19999999, y: 0.4, z: 0.8}
+  m_Center: {x: 0.4, y: 0.3, z: 0.099999994}
 --- !u!4 &8825543854982258358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35aa39ac28abfb942b528fbf1c6c420e,
