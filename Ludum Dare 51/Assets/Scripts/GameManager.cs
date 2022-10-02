@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     public int score;
     public List<GameGoal> goals;
@@ -11,68 +11,33 @@ public class GameManager : MonoBehaviour
 
     internal GameGoal _currentGoal = null;
     public static Action OnScore;
-    public static Action OnNewGoal;
-    internal static GameManager Manager;
+    public static Action<GameGoal> OnNewGoal;
 
     public static bool PrintALot = true;
-
-
-
+    
     private void Start()
     {
-        Manager = GetManager();
         StartCoroutine(CycleRules());
-    }
-
-    public static GameManager GetManager()
-    {
-        if (Manager == null)
-        {
-            Manager = FindObjectOfType<GameManager>();
-        }
-        if (Manager == null)
-        {
-            Manager = new GameObject("GameManager").AddComponent<GameManager>();
-        }
-        return Manager;
-    }
-
-    public static string GetCurrentGoalName()
-    {
-        if (GetManager()._currentGoal)
-        {
-            return GetManager()._currentGoal._goalName;
-        }
-        return "";
-    }
-
-    public static string GetCurrentGoalDescription()
-    {
-        if (GetManager()._currentGoal)
-        {
-            return GetManager()._currentGoal._goalDescription;
-        }
-        return "";
     }
 
     public static int GetPoints()
     {
-        return GetManager().score;
+        return Instance.score;
     }
 
     public static void AddPoints(int points)
     {
-        GetManager().score += points;
+        Instance.score += points;
         OnScore?.Invoke();
     }
 
-    public IEnumerator CycleRules()
+    private IEnumerator CycleRules()
     {
         foreach (var goal in goals)
         {
             _currentGoal = goal;
             _currentGoal?.OnEnter();
-            OnNewGoal?.Invoke();
+            OnNewGoal?.Invoke(_currentGoal);
             yield return new WaitForSeconds(goalChangeInterval);
             _currentGoal?.OnExit();
         }

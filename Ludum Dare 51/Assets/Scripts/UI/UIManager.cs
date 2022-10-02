@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -44,36 +43,38 @@ public class UIManager : MonoBehaviour
 
     void AddGoalsInQueue()
     {
-        foreach (var goal in GameManager.GetManager().goals)
+        foreach (var goal in GameManager.Instance.goals)
         {
             var entry = Instantiate(_textQueueEntryPrefab);
-            entry.text = goal._goalName;
+            entry.text = goal.Name;
             entry.transform.parent = _queueParent;
             _goalsInQueue.Add(entry);
         }
     }
 
-    private void UpdateUIOnGoalChange()
+    private void UpdateUIOnGoalChange(GameGoal goal)
     {
         if (_goalsInQueue.Count > 0)
         {
             Destroy(_goalsInQueue[0].gameObject);
             _goalsInQueue.RemoveAt(0);
         }
-        UpdateGoalName();
-        UpdateGoalDescription();
+        
+        UpdateGoalName(goal);
+        UpdateGoalDescription(goal);
     }
 
-    private void UpdateGoalName()
+    private void UpdateGoalName(GameGoal goal)
     {
-        _goalName.text = GameManager.GetCurrentGoalName();
+        _goalName.text = goal.Description;
         _goalName.transform.localScale = Vector3.one * 2f;
-        _goalName.color = GameManager.GetManager()._currentGoal._entryColor;
+        _goalName.color = goal.Color;
     }
-    private void UpdateGoalDescription()
+    
+    private void UpdateGoalDescription(GameGoal goal)
     {
-        _goalDescription.text = GameManager.GetCurrentGoalDescription();
+        _goalDescription.text = goal.Description;
         _goalDescription.transform.localScale = Vector3.one * 2f;
-        _goalName.color = GameManager.GetManager()._currentGoal._entryColor;
+        _goalName.color = goal.Color;
     }
 }
