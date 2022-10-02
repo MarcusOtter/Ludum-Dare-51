@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5566813104596779853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4708854628075149284}
+  m_Layer: 0
+  m_Name: Bullet spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4708854628075149284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566813104596779853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6956021046464956839}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6956021046464956856
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,8 +63,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6956021048033515338}
+  - {fileID: 4708854628075149284}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3316326059653281678
 Rigidbody:
@@ -78,10 +110,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87eea76fb424271b00467759e48a5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  fireDelayInSeconds: 0
-  spread: 0
+  damage: 1
+  fireDelayInSeconds: 0.01
+  isAutomatic: 0
+  accuracy: 1
+  attackSound: {fileID: 0}
   shellCasingSpawnPoint: {fileID: 0}
+  shellCasingPrefab: {fileID: 0}
+  bulletSpawnPoint: {fileID: 4708854628075149284}
+  bulletPrefab: {fileID: 6385903888453852632, guid: dd2961a4c023a5a439d0448ec89c1075,
+    type: 3}
+  bulletSpeed: 15
 --- !u!1 &6956021048033515339
 GameObject:
   m_ObjectHideFlags: 0
