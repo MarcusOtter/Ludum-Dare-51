@@ -5,6 +5,7 @@ public class CameraMovement : MonoBehaviour
     [Header("Follow mouse & player settings")]
     [SerializeField] [Range(0, 1)] private float smoothTime = 0.1f;
     [SerializeField] private float maxDistance = 4;
+    [SerializeField] private float cameraOffset = 10f;
 
     private PlayerInput _player;
     private Vector2 _velocity;
@@ -34,7 +35,7 @@ public class CameraMovement : MonoBehaviour
         var offset = midPoint - playerPos;
         offset = Vector3.ClampMagnitude(offset, maxDistance);
 
-        var targetPos = new Vector3(playerPos.x + offset.x, playerPos.y, playerPos.z + offset.z);
+        var targetPos = new Vector3(playerPos.x + offset.x, cameraOffset, playerPos.z + offset.z - cameraOffset - 3);
         transform.position = Vector3.Lerp(transformPos, targetPos, smoothTime);
     }
 }

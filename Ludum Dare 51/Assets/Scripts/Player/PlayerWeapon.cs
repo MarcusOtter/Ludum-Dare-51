@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
 	public static Action<RangedWeapon> OnBulletFired;
+	public static Action<Weapon> OnWeaponPickedUp;
 	
 	[Header("References")]
 	[SerializeField] private Transform weaponHolder;
@@ -112,6 +113,7 @@ public class PlayerWeapon : MonoBehaviour
 		_currentWeapon = weapon;
 		weapon.PickUp(weaponHolder);
 		weapon.OnAttack += OnWeaponAttack;
+		OnWeaponPickedUp?.Invoke(weapon);
 	}
 
 	private static void OnWeaponAttack(Weapon weapon)
