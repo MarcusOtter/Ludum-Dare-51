@@ -5,11 +5,12 @@ using System;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
-    public int score;
-    public List<GameGoal> goals;
-    public float goalChangeInterval = 10f; //Them's the rules!
+    public int Score;
+    public List<GameGoal> Goals;
+    public float GoalChangeInterval = 10f; //Them's the rules!
+    public float LastChangeTime;
 
-    internal GameGoal _currentGoal = null;
+    internal GameGoal CurrentGoal = null;
     public static Action OnScore;
     public static Action<GameGoal> OnNewGoal;
 
@@ -27,24 +28,25 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public static int GetPoints()
     {
-        return Instance.score;
+        return Instance.Score;
     }
 
     public static void AddPoints(int points)
     {
-        Instance.score += points;
+        Instance.Score += points;
         OnScore?.Invoke();
     }
 
     private IEnumerator CycleRules()
     {
-        foreach (var goal in goals)
+        foreach (var goal in Goals)
         {
-            _currentGoal = goal;
-            _currentGoal?.OnEnter();
-            OnNewGoal?.Invoke(_currentGoal);
-            yield return new WaitForSeconds(goalChangeInterval);
-            _currentGoal?.OnExit();
+            CurrentGoal = goal;
+            CurrentGoal?.OnEnter();
+            LastChangeTime = Time.time;
+            OnNewGoal?.Invoke(CurrentGoal);
+            yield return new WaitForSeconds(GoalChangeInterval);
+            CurrentGoal?.OnExit();
         }
 
         print("Game End!");
