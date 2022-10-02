@@ -78,9 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bbd7df7e6a408199eb8cc8f901cc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  fireDelayInSeconds: 0
-  spread: 0
+  damage: 1
+  fireDelayInSeconds: 0.5
+  accuracy: 1
+  attackSound: {fileID: 0}
   attackRange: 0
 --- !u!1 &8057958634621793131
 GameObject:

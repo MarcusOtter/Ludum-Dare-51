@@ -102,6 +102,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2830218532962065986}
   - component: {fileID: 1267464045498691626}
+  - component: {fileID: 1456175180}
+  - component: {fileID: 1456175181}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -139,6 +141,34 @@ MonoBehaviour:
   target: {fileID: 1596843263}
   followPosition: 0
   followRotation: 1
+--- !u!114 &1456175180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830218532962065987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6d523f1a1a02947bc723cce27afbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 2830218532962065986}
+  dropDistance: 0.5
+--- !u!136 &1456175181
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830218532962065987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2830218533145974382
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +204,7 @@ Transform:
   - {fileID: 2830218532502116112}
   - {fileID: 1596843263}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6496302455084442487
 MonoBehaviour:
@@ -189,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackKey: 323
-  swapWeaponKey: 120
+  swapWeaponKey: 324
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
   groundLayer:

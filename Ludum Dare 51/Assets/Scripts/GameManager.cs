@@ -21,11 +21,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         StartCoroutine(CycleRules());
     }
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
     public static int GetPoints()
     {
         return Instance.Score;
