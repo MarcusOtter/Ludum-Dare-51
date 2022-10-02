@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Swap Weapon", menuName = "ScriptableObjects/GameGoals/SwapWeapon", order = 1)]
-public class SwapWeapon : GameGoal
+[CreateAssetMenu(fileName = "SwapWeapon", menuName = "ScriptableObjects/GameGoals/SwapWeapon", order = 1)]
+public class SwapWeaponGoal : GameGoal
 {
     public int PointsPerSwap = 1;
 
-    public void GetPointsForWeaponSwap()
+    public void GetPointsForWeaponSwap(Weapon _)
     {
         GameManager.AddPoints(PointsPerSwap);
         if (GameManager.PrintALot) Debug.Log($"+{PointsPerSwap} points for a kill!");
@@ -15,12 +15,10 @@ public class SwapWeapon : GameGoal
 
     public override void OnEnter()
     {
-        base.OnEnter();
-        Enemy.OnDie += GetPointsForWeaponSwap;
+        PlayerWeapon.OnWeaponPickedUp += GetPointsForWeaponSwap;
     }
     public override void OnExit()
     {
-        base.OnExit();
-        Enemy.OnDie -= GetPointsForWeaponSwap;
+        PlayerWeapon.OnWeaponPickedUp -= GetPointsForWeaponSwap;
     }
 }
