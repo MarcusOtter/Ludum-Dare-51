@@ -7,7 +7,8 @@ public class GameGoal : ScriptableObject
 {
     public string _goalName = "Goal";
     public string _goalDescription = "Get points!";
-
+    public AudioClip _entrySoundEffect;
+    public Color _entryColor = Color.white;
 
     public virtual void OnEnter()
     {

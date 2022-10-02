@@ -6,10 +6,10 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public int score;
-    [SerializeField] private List<GameGoal> _goals;
+    public List<GameGoal> goals;
     public float goalChangeInterval = 10f; //Them's the rules!
 
-    private GameGoal _currentGoal = null;
+    internal GameGoal _currentGoal = null;
     public static Action OnScore;
     public static Action OnNewGoal;
     internal static GameManager Manager;
@@ -20,13 +20,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if(Manager == null) Manager = this;
+        Manager = GetManager();
         StartCoroutine(CycleRules());
     }
 
     public static GameManager GetManager()
     {
-        if(Manager == null)
+        if (Manager == null)
+        {
+            Manager = FindObjectOfType<GameManager>();
+        }
+        if (Manager == null)
         {
             Manager = new GameObject("GameManager").AddComponent<GameManager>();
         }
@@ -35,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public static string GetCurrentGoalName()
     {
-        if(GetManager()._currentGoal)
+        if (GetManager()._currentGoal)
         {
             return GetManager()._currentGoal._goalName;
         }
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator CycleRules()
     {
-        foreach(var goal in _goals)
+        foreach (var goal in goals)
         {
             _currentGoal = goal;
             _currentGoal?.OnEnter();
