@@ -47,6 +47,7 @@ public class PlayerWeapon : MonoBehaviour
 		}
 	}
 	
+	// TODO: Probably add a cooldown that prevents this from happening right after you swapped a weapon
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!other.transform.root.TryGetComponent<Weapon>(out var weapon)) return;

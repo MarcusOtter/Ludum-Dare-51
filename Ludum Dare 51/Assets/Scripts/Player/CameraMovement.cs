@@ -35,7 +35,7 @@ public class CameraMovement : MonoBehaviour
         var offset = midPoint - playerPos;
         offset = Vector3.ClampMagnitude(offset, maxDistance);
 
-        var targetPos = new Vector3(playerPos.x + offset.x, cameraOffset, playerPos.z + offset.z - cameraOffset - 3);
+        var targetPos = new Vector3(playerPos.x + offset.x, cameraOffset, playerPos.z + offset.z - cameraOffset);
         transform.position = Vector3.Lerp(transformPos, targetPos, smoothTime);
     }
 }
