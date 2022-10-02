@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEnemy : Enemy
+public class TestEnemy : EnemyAgent
 {
-    void Update()
+    protected override void InitializeBehaviourTree()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
+        Sequence approachPlayerSequence = new();
+        SetTargetNode setTargetNode = new(player.transform, this);
+        WithinRange withinRange = new(this);
+        ApproachTarget approach = new(this);
+        approachPlayerSequence.children.Add(setTargetNode);
+        approachPlayerSequence.children.Add(withinRange);
+        approachPlayerSequence.children.Add(approach);
+        root = approachPlayerSequence;
     }
 }
