@@ -580,6 +580,7 @@ MonoBehaviour:
   Score: 0
   Goals:
   - {fileID: 11400000, guid: e908e57102ea7fa4d9470bc4c45e78e9, type: 2}
+  - {fileID: 11400000, guid: 3a4bc3d0a2abb8b42b644bb69c482743, type: 2}
   - {fileID: 11400000, guid: d0316f9f47d50024c9ac582bd198142b, type: 2}
   - {fileID: 11400000, guid: 3a441947c1358a14f82d381f8699bc93, type: 2}
   - {fileID: 11400000, guid: cf7305351e0e82e408bfedbdff951dd7, type: 2}
