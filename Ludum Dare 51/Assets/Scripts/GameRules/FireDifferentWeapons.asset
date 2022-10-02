@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcfa43f94af116409881a70e1976688, type: 3}
   m_Name: FireDifferentWeapons
   m_EditorClassIdentifier: 
-  Name: Goal
-  Description: Get points!
+  Name: Variety
+  Description: Fire as many different weapons as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 1, g: 1, b: 1, a: 1}
   PointsPerWeaponShot: 15

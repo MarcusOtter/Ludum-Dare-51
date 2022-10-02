@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8f6d0e51089c94f9892f04b5a59553, type: 3}
-  m_Name: KillEnemies
+  m_Script: {fileID: 11500000, guid: fd9f5176ec1b5f842af63edd5bdca563, type: 3}
+  m_Name: Pacman
   m_EditorClassIdentifier: 
-  Name: Massacre
-  Description: Kill as many enemies as possible
+  Name: Nostalgia
+  Description: Gobble as many dots as you can
   EntrySoundEffect: {fileID: 0}
-  Color: {r: 1, g: 1, b: 1, a: 1}
-  PointsPerKill: 10
+  Color: {r: 0.9435899, g: 1, b: 0, a: 1}

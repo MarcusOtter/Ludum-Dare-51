@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67354ace61798994795a208f3d81d945, type: 3}
   m_Name: FireWeapon
   m_EditorClassIdentifier: 
-  Name: Goal
-  Description: Get points!
+  Name: Bullet Heaven
+  Description: Fire as many projectiles as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 1, g: 1, b: 1, a: 1}
   PointsPerShot: 1
