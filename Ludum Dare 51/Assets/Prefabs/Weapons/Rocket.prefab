@@ -66,6 +66,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactSound: {fileID: 0}
   impactParticleSystem: {fileID: 0}
+  spawnOnImpact: {fileID: 151336358965818178, guid: 04efb4e9b2976544db9601876d90cc0b,
+    type: 3}
 --- !u!114 &3621633373967121564
 MonoBehaviour:
   m_ObjectHideFlags: 0

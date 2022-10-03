@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [Header("Impact settings")]
     [SerializeField] private SoundEffect impactSound;
     [SerializeField] private ParticleSystem impactParticleSystem;
+    [SerializeField] private GameObject spawnOnImpact;
 
     private int _damage;
     private float _speed;
@@ -29,10 +30,15 @@ public class Bullet : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        _rigidbody.velocity = Vector2.zero;
+        Instantiate(spawnOnImpact, transform.position, Quaternion.identity);
 
         var hurtable = collision.transform.root.GetComponentInChildren<Hurtable>();
-        if (hurtable == null) return;
+        if (hurtable == null)
+        {
+            SoundEffectPlayer.PlaySoundEffect(impactSound, transform);
+            Destroy(gameObject);
+            return;
+        }
 
         var willKillHurtable = hurtable.IsLethalDamage(_damage);
 
