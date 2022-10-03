@@ -47,11 +47,9 @@ public class Zombie : EnemyAgent
 
     private void OnTriggerEnter(Collider other)
     {
-        print($"Collide with {other.name}!");
         if (other.CompareTag("Corpse"))
         {
             _nearbyCorpses.Add(other.transform);
-            print("Add corpse!");
         }
 
     }
