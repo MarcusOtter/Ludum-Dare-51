@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		_rigidbody.velocity = 
-			Vector3.ClampMagnitude(new Vector3(_input.HorizontalAxis, 0, _input.VerticalAxis), 1) 
+			Vector3.ClampMagnitude(new Vector3(_input.HorizontalAxis, 0, _input.VerticalAxis), 1)
 			* movementSpeed;
 
 		RotateTowardsMouse();

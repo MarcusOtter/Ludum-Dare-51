@@ -28,8 +28,8 @@ public class EnemySpawner : MonoBehaviour
                     var enemy = Instantiate(enemies[Random.Range(0, enemies.Count)]);
                     enemy.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
                 }
-                yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
             }
+            yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
         }
     }
 }
