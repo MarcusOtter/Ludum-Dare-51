@@ -42,6 +42,7 @@ public class PlayerMovement : Hurtable
 			GetComponentInChildren<PlayerInput>().enabled = false;
 			GetComponentInChildren<PlayerMovement>().enabled = false;
 			GetComponentInChildren<Rigidbody>().isKinematic = true;
+			GetComponentInChildren<FollowTransform>().enabled = false;
 			foreach (var coll in GetComponentsInChildren<Collider>())
 			{
 				coll.enabled = false;
@@ -58,7 +59,16 @@ public class PlayerMovement : Hurtable
 		// Never destroy player :)
 		base.Die(999f);
 	}
-	
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		var enemy = collision.transform.root.GetComponentInChildren<Enemy>();
+		if (enemy != null)
+		{
+			Die();
+		}
+	}
+
 	private void RotateTowardsMouse()
 	{
 		transform.forward = (_input.MouseWorldPosition - transform.position).normalized;
