@@ -17,4 +17,10 @@ public class MeleeWeapon : Weapon
 		
 		base.Attack();
 	}
+
+	public override void Drop(Vector3 newPosition)
+	{
+		base.Drop(newPosition);
+		attackCollider.SetActive(false);
+	}
 }

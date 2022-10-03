@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public abstract class EnemyAgent : Enemy
@@ -27,7 +25,7 @@ public abstract class EnemyAgent : Enemy
 
     protected virtual void FixedUpdate()
     {
-        if (running)
+        if (running && !IsDead)
         {
             root?.Run();
         }

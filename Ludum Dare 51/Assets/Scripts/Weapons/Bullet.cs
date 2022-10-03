@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
             Instantiate(spawnOnImpact, transform.position, Quaternion.identity);
         }
 
-        var hurtable = collision.transform.root.GetComponentInChildren<Hurtable>();
+        var hurtable = collision.transform.root.GetComponentInChildren<IHurtable>();
         if (hurtable == null)
         {
             SoundEffectPlayer.PlaySoundEffect(impactSound, transform);

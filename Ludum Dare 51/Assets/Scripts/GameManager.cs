@@ -14,7 +14,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public static Action OnScore;
     public static Action<GameGoal> OnNewGoal;
 
-    public static bool PrintALot = true;
+    public static bool PrintALot = false;
     
     private void Start()
     {

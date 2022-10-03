@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Hurtable : MonoBehaviour
+public class Hurtable : MonoBehaviour, IHurtable
 {
 	[SerializeField] private int maxHealth;
 	[SerializeField] private SoundEffect hurtSound;

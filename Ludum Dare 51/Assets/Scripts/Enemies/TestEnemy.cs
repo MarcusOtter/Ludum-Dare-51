@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEnemy : EnemyAgent
+public class TestEnemy : EnemyAgent, IHurtable
 {
     private List<Transform> _nearbyWeapons = new();
     private Transform _customTarget;
@@ -26,6 +26,17 @@ public class TestEnemy : EnemyAgent
             Destroy(_customTarget.gameObject);
         }
     }
+
+    public override void Die()
+    {
+        if (HeldWeapon != null)
+        {
+            HeldWeapon.Drop(transform.position - transform.forward);
+        }
+        
+        base.Die();
+    }
+    
     protected override void InitializeBehaviourTree()
     {
         Selector baseSelector = new();
@@ -95,6 +106,8 @@ public class TestEnemy : EnemyAgent
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minShootWait, maxShootWait));
+            if (IsDead) break;
+            
             if (HeldWeapon && HeldWeapon.isAutomatic)
             {
                 float starttime = Time.time;
@@ -114,11 +127,9 @@ public class TestEnemy : EnemyAgent
 
     private void OnTriggerEnter(Collider other)
     {
-        print($"Collide with {other.name}!");
         if (other.GetComponentInParent<Weapon>())
         {
             _nearbyWeapons.Add(other.transform);
-            print("Add weapon!");
         }
 
     }

@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHurtable
 {
     public static Action OnDie;
 
     public int health;
     public float movementSpeed;
     [SerializeField] private float range = 10f;
+    protected bool IsDead;
 
     protected PlayerMovement player;
     protected virtual void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
+    }
+
+    public bool IsLethalDamage(int damage)
+    {
+        return health - damage <= 0;
     }
 
     public void TakeDamage(int damage)
@@ -28,10 +34,14 @@ public class Enemy : MonoBehaviour
         return range;
     }
 
-    public void Die()
+    public virtual void Die()
     {
         OnDie?.Invoke();
-        //Do death stuff
+        IsDead = true;
+        
+        // TODO: Spawn corpse
+        
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

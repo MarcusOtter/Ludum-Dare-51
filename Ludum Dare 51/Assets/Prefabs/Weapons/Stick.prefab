@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 5
   explosionCenter: {fileID: 6413212538489905154}
-  explosionRadius: 5
+  explosionRadius: 0
   explosionUpwardModifier: 0.2
   damage: 5
 --- !u!1 &6413212537794629869
@@ -254,6 +254,7 @@ MonoBehaviour:
   animator: {fileID: 7531750617411089513}
   attackCollider: {fileID: 5320090545359755768}
   attackDuration: 0.25
+  attackDelay: 0
 --- !u!1001 &1487731823514728339
 PrefabInstance:
   m_ObjectHideFlags: 0
