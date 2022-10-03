@@ -8,6 +8,7 @@ public class Hurtable : MonoBehaviour
 	[SerializeField] private SoundEffect deathSound;
 	[SerializeField] private GameObject[] alwaysSpawnOnDeath;
 	[SerializeField] private GameObject[] randomObjectSpawnOnDeath;
+	[SerializeField] private int amountOfLootToSpawn = 1;
 	[SerializeField] private Color hurtParticleColor;
 
 	private static readonly int DamageAnimationTrigger = Animator.StringToHash("TakeDamage");
@@ -54,11 +55,14 @@ public class Hurtable : MonoBehaviour
 		{
 			Instantiate(obj, transform.position, Quaternion.identity);
 		}
-
+		
 		if (randomObjectSpawnOnDeath.Any())
 		{
-			var randomObject = randomObjectSpawnOnDeath[Random.Range(0, randomObjectSpawnOnDeath.Length)];
-			Instantiate(randomObject, transform.position, Quaternion.identity);
+			for (var i = 0; i < amountOfLootToSpawn; i++)
+			{
+				var obj = randomObjectSpawnOnDeath[Random.Range(0, randomObjectSpawnOnDeath.Length)];
+				Instantiate(obj, transform.position, Quaternion.identity);
+			}
 		}
 		
 		Destroy(gameObject);
