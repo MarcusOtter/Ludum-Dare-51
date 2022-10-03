@@ -1152,7 +1152,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 3171512049158176745, guid: 567ee1dc48df0974187a6d0ed7e7505b, type: 3}
   - {fileID: 3171512049158176745, guid: 567ee1dc48df0974187a6d0ed7e7505b, type: 3}
-  - {fileID: 3171512049158176745, guid: 567ee1dc48df0974187a6d0ed7e7505b, type: 3}
+  - {fileID: 4308009463037867858, guid: 9b63875b6965cb24ba8d51e86c14591e, type: 3}
   Spawning: 1
   minEnemiesPerSpawn: 1
   maxEnemiesPerSpawn: 3

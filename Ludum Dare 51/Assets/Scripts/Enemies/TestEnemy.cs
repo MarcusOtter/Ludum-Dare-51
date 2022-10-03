@@ -21,7 +21,10 @@ public class TestEnemy : EnemyAgent
     }
     private void OnDestroy()
     {
-        Destroy(_customTarget.gameObject);
+        if (_customTarget != null && _customTarget.gameObject != null)
+        {
+            Destroy(_customTarget.gameObject);
+        }
     }
     protected override void InitializeBehaviourTree()
     {

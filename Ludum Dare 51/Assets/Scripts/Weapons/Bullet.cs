@@ -30,7 +30,10 @@ public class Bullet : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(spawnOnImpact, transform.position, Quaternion.identity);
+        if (spawnOnImpact != null)
+        {
+            Instantiate(spawnOnImpact, transform.position, Quaternion.identity);
+        }
 
         var hurtable = collision.transform.root.GetComponentInChildren<Hurtable>();
         if (hurtable == null)

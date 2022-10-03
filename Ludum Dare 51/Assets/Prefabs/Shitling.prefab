@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  movementSpeed: 10
+  movementSpeed: 15
   range: 3
   running: 1
   target: {fileID: 0}
@@ -168,7 +168,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4308009463037867887}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
