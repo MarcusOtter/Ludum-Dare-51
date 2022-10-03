@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private ParticleSystem impactParticleSystem;
 
     private int _damage;
+    private float _speed;
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -15,20 +16,31 @@ public class Bullet : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        _rigidbody.velocity = transform.forward * _speed;
+    }
+    
     internal void Shoot(int damage, float speed)
     {
         _damage = damage;
-        _rigidbody.AddForce(transform.forward * speed, ForceMode.Impulse);
+        _speed = speed;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnCollisionEnter(Collision collision)
     {
         _rigidbody.velocity = Vector2.zero;
-        
-        // TODO: Figure out collision.
-        // Get an IShootable which has a color that we can set to the particle system
-        // Try to send damage to IShootable
-        
-        // Play impact sound
+
+        var hurtable = collision.transform.root.GetComponentInChildren<Hurtable>();
+        if (hurtable == null) return;
+
+        var willKillHurtable = hurtable.IsLethalDamage(_damage);
+
+        if (!willKillHurtable)
+        {
+            Destroy(gameObject);
+        }
+
+        hurtable.TakeDamage(_damage);
     }
 }

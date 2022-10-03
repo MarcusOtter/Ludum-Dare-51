@@ -115,7 +115,6 @@ public class PlayerWeapon : MonoBehaviour
 		weapon.PickUp(weaponHolder);
 		weapon.OnAttack += OnWeaponAttack;
 		OnWeaponPickedUp?.Invoke(weapon);
-		print("Weapon pick up");
 	}
 
 	private static void OnWeaponAttack(Weapon weapon)
