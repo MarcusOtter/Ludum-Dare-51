@@ -25,7 +25,7 @@ public class PlayerMovement : Hurtable
 		RotateTowardsMouse();
 	}
 
-	protected override void Die(float delay = 0)
+	public override void Die(float delay = 0)
 	{
 		GameManager.PreviousScore = GameManager.Instance.Score;
 		if (GameManager.PreviousScore > GameManager.BestScore)

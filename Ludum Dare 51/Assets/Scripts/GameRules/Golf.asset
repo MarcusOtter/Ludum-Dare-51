@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Golf
   m_EditorClassIdentifier: 
   Name: Unwind
-  Description: Get points!
+  Description: Hole the ball!
   EntrySoundEffect: {fileID: 11400000, guid: 14064a1cad0036c4fac4712a572902db, type: 2}
   Color: {r: 1, g: 1, b: 1, a: 1}
   _golfCourse: {fileID: 0}

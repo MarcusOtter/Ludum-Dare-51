@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3171512049158176745}
   - component: {fileID: 5279273311262370841}
   - component: {fileID: 4186693400598447817}
+  - component: {fileID: 8502309760037198396}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -75,7 +76,20 @@ MonoBehaviour:
   - {fileID: 3056697749066565507, guid: e1f52d6ec2497ab48aa40feab7fa6bc6, type: 3}
   - {fileID: 6413212538489905181, guid: ab0834ddfd97955468c5934bd7dfe734, type: 3}
   - {fileID: 8057958633061763242, guid: ac420cc0d9aefbf488955fc0aa9b1c8b, type: 3}
+  amountOfLootToSpawn: 1
   hurtParticleColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8502309760037198396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171512049158176744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46a5b333460e034cafd1b826f27e65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3171512049439612646
 GameObject:
   m_ObjectHideFlags: 0

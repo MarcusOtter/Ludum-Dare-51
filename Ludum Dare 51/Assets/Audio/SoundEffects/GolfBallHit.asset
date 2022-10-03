@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd095b38db2249daae7277ec4d02c2f0, type: 3}
   m_Name: GolfBallHit
   m_EditorClassIdentifier: 
-  Clips: []
+  Clips:
+  - {fileID: 8300000, guid: 458fe89343e0dbf4a9475eaabf2d7e6d, type: 3}
   MinVolume: 0.4
   MaxVolume: 0.6
   MinPitch: 0.95

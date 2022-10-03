@@ -92,9 +92,11 @@ public class PlayerWeapon : MonoBehaviour
 	private void SwapWeapon()
 	{
 		var swappableWeapons = _weaponsInSwapRange.Values
+			.Where(x => x != null)
 			.Where(x => x.GetInstanceID() != _currentWeapon.GetInstanceID());
 		
 		if (!swappableWeapons.Any()) return;
+
 		var closestWeapon = swappableWeapons
 			.OrderBy(x => (x.transform.position - transform.root.position).sqrMagnitude)
 			.First();
