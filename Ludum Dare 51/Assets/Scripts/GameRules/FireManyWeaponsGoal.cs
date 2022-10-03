@@ -6,7 +6,7 @@ using UnityEngine;
 public class FireManyWeaponsGoal : GameGoal
 {
     public int PointsPerWeaponShot = 15;
-    private List<int> _firedIDs;
+    private List<int> _firedIDs = new();
 
     public void GainPointsForShooting(Weapon firedWeapon)
     {

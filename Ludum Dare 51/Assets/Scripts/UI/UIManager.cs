@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _goalName, _goalDescription;
     [SerializeField] private List<TMP_Text> _goalsInQueue;
     [SerializeField] private Color _textColor = Color.white;
-    [SerializeField] private Color _seethroughColor = new Color(1f, 1f, 1f, 0.66f);
     [SerializeField] private Transform _queueParent;
     [SerializeField] private TMP_Text _textQueueEntryPrefab;
 
@@ -45,9 +44,8 @@ public class UIManager : MonoBehaviour
     {
         foreach (var goal in GameManager.Instance.Goals)
         {
-            var entry = Instantiate(_textQueueEntryPrefab);
+            var entry = Instantiate(_textQueueEntryPrefab, _queueParent);
             entry.text = goal?.Name;
-            entry.transform.parent = _queueParent;
             _goalsInQueue.Add(entry);
         }
     }

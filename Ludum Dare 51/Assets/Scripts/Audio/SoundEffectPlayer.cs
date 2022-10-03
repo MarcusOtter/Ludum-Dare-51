@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
     public class SoundEffectPlayer : MonoBehaviour
     {
-        internal static float MainVolume = 1f;
+        internal static float MainVolume = 0.5f;
         private const float PlayerHearingDistance = 20f;
 
         private bool _scaleVolumeWithPlayerDistance = true;
