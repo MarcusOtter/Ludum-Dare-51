@@ -28,7 +28,7 @@ public class Hurtable : MonoBehaviour, IHurtable
 	
 	public bool IsLethalDamage(int damage) => _currentHealth - damage <= 0;
 	
-	public void TakeDamage(int damage)
+	public virtual void TakeDamage(int damage)
 	{
 		_currentHealth -= damage;
 		SoundEffectPlayer.PlaySoundEffect(hurtSound, transform);
@@ -43,7 +43,7 @@ public class Hurtable : MonoBehaviour, IHurtable
 		}
 	}
 
-	private void Die()
+	protected virtual void Die(float delay = 0)
 	{
 		SoundEffectPlayer.PlaySoundEffect(deathSound, transform);
 		if (_animator != null)
@@ -64,8 +64,8 @@ public class Hurtable : MonoBehaviour, IHurtable
 				Instantiate(obj, transform.position, Quaternion.identity);
 			}
 		}
-		
-		Destroy(gameObject);
+
+		Destroy(gameObject, delay);
 	}
 }
 

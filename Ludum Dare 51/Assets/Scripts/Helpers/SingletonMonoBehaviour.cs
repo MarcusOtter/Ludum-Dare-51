@@ -6,13 +6,13 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour
 	
 	protected virtual void Awake()
 	{
-		if (Instance == null)
+		// if (Instance == null)
 		{
 			Instance = GetComponent<T>();
-			DontDestroyOnLoad(gameObject);
-			return;
+			// DontDestroyOnLoad(gameObject);
+			// return;
 		}
 
-		Destroy(gameObject);
+		// Destroy(gameObject);
 	}
 }

@@ -5,12 +5,14 @@ using System;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    public static int PreviousScore = -1;
+    public static int BestScore = -1;
     public int Score;
     public List<GameGoal> Goals;
     public float GoalChangeInterval = 10f; //Them's the rules!
     public float LastChangeTime;
 
-    internal GameGoal CurrentGoal = null;
+    internal GameGoal CurrentGoal;
     public static Action OnScore;
     public static Action<GameGoal> OnNewGoal;
 

@@ -54,7 +54,8 @@ using UnityEngine;
 
         internal static void PlaySoundEffect(SoundEffect soundEffect, Transform sender, bool scaleVolumeWithPlayerDistance = true, bool scalePitchWithTimeScale = true)
         {
-            var player = new GameObject($"{sender.name} Sound Player", typeof(SoundEffectPlayer)).GetComponent<SoundEffectPlayer>();
+            var objectName = sender == null ? "Anonymous Sound Player" : $"{sender.name} Sound Player";
+            var player = new GameObject(objectName, typeof(SoundEffectPlayer)).GetComponent<SoundEffectPlayer>();
             player.Initialize(soundEffect, sender, scaleVolumeWithPlayerDistance, scalePitchWithTimeScale);
         }
 
@@ -68,7 +69,8 @@ using UnityEngine;
 
             if (soundEffect == null)
             {
-                Debug.LogWarning($"{sender.name} does not have a sound effect.", gameObject);
+                var senderName = sender == null ? "Unknown object" : sender.name;
+                Debug.LogWarning($"{senderName} does not have a sound effect.", gameObject);
                 Destroy(gameObject);
                 return;
             }

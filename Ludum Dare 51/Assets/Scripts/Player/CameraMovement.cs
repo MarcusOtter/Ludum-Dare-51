@@ -25,6 +25,7 @@ public class CameraMovement : MonoBehaviour
     /// </summary>
     private void FollowPlayer()
     {
+        if (_player == null) return;
         var playerPos = _player.transform.position;
         var transformPos = transform.position;
 
