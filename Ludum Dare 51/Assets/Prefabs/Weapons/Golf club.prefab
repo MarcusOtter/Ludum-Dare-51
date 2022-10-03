@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0230591f7d0de948b3fe463501ecbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 2
+  explosionForce: 5
   explosionCenter: {fileID: 4802823554446346809}
   explosionRadius: 5
   explosionUpwardModifier: 1
@@ -149,7 +149,7 @@ Transform:
   - {fileID: 4802823554667536511}
   - {fileID: 2674945456630250690}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &9146914340265122371
 Rigidbody:

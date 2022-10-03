@@ -9,6 +9,11 @@ public class EnvironmentManager : MonoBehaviour
     private Material _floorMaterial;
     [SerializeField] private Material _pacmanMaterial;
 
+    [SerializeField] private Transform _golfCourse;
+    [SerializeField] private Weapon _golfClub;
+    [SerializeField] private Material _golfMaterial;
+
+
     private void Start()
     {
         _mesh = GetComponent<MeshRenderer>();
@@ -23,6 +28,22 @@ public class EnvironmentManager : MonoBehaviour
     public void EndPacMan()
     {
         _pacmanLevel.gameObject.SetActive(false);
+        _mesh.material = _floorMaterial;
+    }
+
+
+    public void StartGolf()
+    {
+        _golfCourse.gameObject.SetActive(true);
+        _golfClub.gameObject.SetActive(true);
+        _mesh.material = _golfMaterial;
+        _golfClub.transform.parent = null;
+        _golfClub.transform.localScale = Vector3.one;
+    }
+    public void EndGolf()
+    {
+        _golfCourse.gameObject.SetActive(false);
+        
         _mesh.material = _floorMaterial;
     }
 }
