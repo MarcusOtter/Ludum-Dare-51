@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
         foreach (var goal in GameManager.Instance.Goals)
         {
             var entry = Instantiate(_textQueueEntryPrefab);
-            entry.text = goal.Name;
+            entry.text = goal?.Name;
             entry.transform.parent = _queueParent;
             _goalsInQueue.Add(entry);
         }

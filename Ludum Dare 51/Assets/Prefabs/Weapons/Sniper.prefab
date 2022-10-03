@@ -113,7 +113,7 @@ MonoBehaviour:
   damage: 5
   fireDelayInSeconds: 0.5
   isAutomatic: 0
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 11400000, guid: 7642934c5f731ab46a3aae8c06d65e3d, type: 2}
   animator: {fileID: 7059252722742657693}
   shellCasingSpawnPoint: {fileID: 0}
   shellCasingPrefab: {fileID: 0}

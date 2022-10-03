@@ -38,6 +38,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         {
             CurrentGoal = goal;
             CurrentGoal?.OnEnter();
+            SoundEffectPlayer.PlaySoundEffect(CurrentGoal?.EntrySoundEffect, transform);
             LastChangeTime = Time.time;
             OnNewGoal?.Invoke(CurrentGoal);
             yield return new WaitForSeconds(GoalChangeInterval);

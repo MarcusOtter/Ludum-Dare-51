@@ -7,6 +7,7 @@ public class PacManDot : MonoBehaviour
     public int points = 15;
     private Vector3 _finalScale;
     private bool _eaten;
+    [SerializeField] private SoundEffect _gobbleSound;
 
     private void OnEnable()
     {
@@ -29,6 +30,7 @@ public class PacManDot : MonoBehaviour
         var player = collider.GetComponentInParent<PlayerMovement>();
         if(player && !_eaten)
         {
+            SoundEffectPlayer.PlaySoundEffect(_gobbleSound, transform);
             GameManager.AddPoints(points);
             _eaten = true;
         }
