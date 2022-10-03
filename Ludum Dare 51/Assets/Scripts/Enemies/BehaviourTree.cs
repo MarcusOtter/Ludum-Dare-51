@@ -39,6 +39,10 @@ public abstract class Node
 public abstract class Composite : Node
 {
     public List<Node> children = new List<Node>();
+    public void AddChild(Node child)
+    {
+        children.Add(child);
+    }
 }
 [System.Serializable]
 public class Sequence : Composite
@@ -93,14 +97,22 @@ public class Selector : Composite
 [System.Serializable]
 public abstract class Decorator : Node
 {
-    public Node child;
+    public Node Child;
+    public Decorator(Node child)
+    {
+        Child = child;
+    }
 }
 [System.Serializable]
 public class Inverter : Decorator
 {
+    public Inverter(Node child) : base(child)
+    {
+
+    }
     public override NodeStatus Run()
     {
-        switch(child.Run())
+        switch(Child.Run())
         {
             case NodeStatus.SUCCESS:
                 return NodeStatus.FAILURE;
@@ -116,9 +128,13 @@ public class Inverter : Decorator
 [System.Serializable]
 public class FailureToRunning : Decorator
 {
+    public FailureToRunning(Node child) : base(child)
+    {
+
+    }
     public override NodeStatus Run()
     {
-        switch (child.Run())
+        switch (Child.Run())
         {
             case NodeStatus.SUCCESS:
                 return NodeStatus.SUCCESS;
@@ -127,7 +143,7 @@ public class FailureToRunning : Decorator
             case NodeStatus.RUNNING:
                 return NodeStatus.RUNNING;
             default:
-                Debug.LogError($"{child.GetType().Name} returns a nonexistent nodestatus. I don't know how that's even possible");
+                Debug.LogError($"{Child.GetType().Name} returns a nonexistent nodestatus. I don't know how that's even possible");
                 return NodeStatus.SUCCESS;
         }
     }

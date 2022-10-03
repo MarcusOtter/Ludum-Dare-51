@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SetTargetNode : Node
 {
+    private Transform customTarget;
     public SetTargetNode(Transform target, EnemyAgent agent) : base(agent)
     {
-        agent.target = target;
+        customTarget = target;
     }
     public override NodeStatus Run()
     {
+        agent.target = customTarget;
         return agent.target == null ? NodeStatus.FAILURE : NodeStatus.SUCCESS;
     }
 }

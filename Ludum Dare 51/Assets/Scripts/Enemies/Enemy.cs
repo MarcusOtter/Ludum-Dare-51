@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float range = 10f;
 
     protected PlayerMovement player;
-    private void Awake()
+    protected virtual void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
     }

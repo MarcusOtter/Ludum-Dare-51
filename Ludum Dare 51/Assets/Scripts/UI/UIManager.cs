@@ -59,18 +59,22 @@ public class UIManager : MonoBehaviour
             Destroy(_goalsInQueue[0].gameObject);
             _goalsInQueue.RemoveAt(0);
         }
-        
+
         UpdateGoalName(goal);
         UpdateGoalDescription(goal);
     }
 
     private void UpdateGoalName(GameGoal goal)
     {
-        _goalName.text = goal.Name;
-        _goalName.transform.localScale = Vector3.one * 2f;
-        _goalName.color = goal.Color;
+        if (goal)
+        {
+            _goalName.text = goal.Name;
+            _goalName.transform.localScale = Vector3.one * 2f;
+            _goalName.color = goal.Color;
+
+        }
     }
-    
+
     private void UpdateGoalDescription(GameGoal goal)
     {
         _goalDescription.text = goal.Description;
