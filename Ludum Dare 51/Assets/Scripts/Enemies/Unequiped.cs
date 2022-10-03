@@ -11,7 +11,6 @@ public class Unequiped : Node
     }
     public override NodeStatus Run()
     {
-        Debug.Log($"Weapon unequiped: {guy.HeldWeapon == null}");
         return guy.HeldWeapon == null ? NodeStatus.SUCCESS : NodeStatus.FAILURE;
     }
 }

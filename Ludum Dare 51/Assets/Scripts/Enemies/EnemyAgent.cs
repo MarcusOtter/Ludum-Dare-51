@@ -27,6 +27,9 @@ public abstract class EnemyAgent : Enemy
 
     protected virtual void FixedUpdate()
     {
-        if(running)root?.Run();
+        if (running)
+        {
+            root?.Run();
+        }
     }
 }
