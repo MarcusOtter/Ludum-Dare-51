@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd095b38db2249daae7277ec4d02c2f0, type: 3}
-  m_Name: Pacman_Waka
+  m_Script: {fileID: 11500000, guid: dc3a93ef60c580e4faae250a1662fe67, type: 3}
+  m_Name: SuicideGoal
   m_EditorClassIdentifier: 
-  Clips:
-  - {fileID: 8300000, guid: 8204f7f9085f7204596eca8e0eb11ced, type: 3}
-  MinVolume: 0.4
-  MaxVolume: 0.6
-  MinPitch: 0.95
-  MaxPitch: 1.05
-  Loop: 0
+  Name: The end
+  Description: Die as fast as you can
+  EntrySoundEffect: {fileID: 0}
+  Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
+  pointsPerSecond: 100

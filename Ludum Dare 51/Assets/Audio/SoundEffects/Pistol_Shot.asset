@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pistol_Shot
   m_EditorClassIdentifier: 
   Clips:
-  - {fileID: 8300000, guid: f6cbfb4a7aa8622469de7fefb7eb81ea, type: 3}
+  - {fileID: 8300000, guid: bf6275542e5adf04894a08ed4651fe28, type: 3}
   MinVolume: 0.4
   MaxVolume: 0.6
   MinPitch: 0.95

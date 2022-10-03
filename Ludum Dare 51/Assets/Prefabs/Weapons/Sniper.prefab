@@ -110,11 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87eea76fb424271b00467759e48a5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   fireDelayInSeconds: 0.5
   isAutomatic: 0
   attackSound: {fileID: 11400000, guid: 7642934c5f731ab46a3aae8c06d65e3d, type: 2}
   animator: {fileID: 7059252722742657693}
+  DestroyOnGolf: 1
   shellCasingSpawnPoint: {fileID: 0}
   shellCasingPrefab: {fileID: 0}
   bulletSpawnPoint: {fileID: 8086459307283555838}

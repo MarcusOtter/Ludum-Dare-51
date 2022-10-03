@@ -250,8 +250,9 @@ MonoBehaviour:
   damage: 1
   fireDelayInSeconds: 0.1
   isAutomatic: 1
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 11400000, guid: 32fe4a4e2a6b70446990e77bac39551a, type: 2}
   animator: {fileID: 5218279341012444903}
+  DestroyOnGolf: 1
   shellCasingSpawnPoint: {fileID: 0}
   shellCasingPrefab: {fileID: 0}
   bulletSpawnPoint: {fileID: 5909696356563723702}

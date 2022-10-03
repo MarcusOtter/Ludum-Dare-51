@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &680303781538259960
 MeshFilter:
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267a39024aea9f84fb213595669f8cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 15
+  points: 10
   _gobbleSound: {fileID: 11400000, guid: a9707dd34af7e70459bd80dda4c2143a, type: 2}

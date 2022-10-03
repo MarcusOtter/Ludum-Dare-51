@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<Transform> enemies;
+    [SerializeField] private int shitToSpawn = 10;
 
     public bool Spawning;
     [SerializeField] private int minEnemiesPerSpawn, maxEnemiesPerSpawn;
@@ -15,12 +16,14 @@ public class EnemySpawner : MonoBehaviour
     {
         GolfGoal.OnGolfStart += StopSpawning;
         GolfGoal.OnGolfEnd += StartSpawning;
+        GolfGoal.OnGolfEnd += SpawnShitTonOfStuff;
     }
 
     private void OnDisable()
     {
         GolfGoal.OnGolfStart -= StopSpawning;
         GolfGoal.OnGolfEnd -= StartSpawning;
+        GolfGoal.OnGolfEnd -= SpawnShitTonOfStuff;
     }
 
     void StartSpawning()
@@ -37,6 +40,15 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemies());
     }
 
+    private void SpawnShitTonOfStuff()
+    {
+        for (int i = 0; i < shitToSpawn; i++)
+        {
+            var enemy = Instantiate(enemies[Random.Range(0, enemies.Count)]);
+            enemy.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+        }
+    }
+    
     private IEnumerator SpawnEnemies()
     {
         while(true)

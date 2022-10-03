@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: Swap weapons as many times as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-  PointsPerSwap: 1
+  PointsPerSwap: 10

@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: Fire as many different weapons as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-  PointsPerWeaponShot: 15
+  PointsPerWeaponShot: 150

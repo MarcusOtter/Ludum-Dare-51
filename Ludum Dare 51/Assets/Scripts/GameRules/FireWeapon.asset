@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: Fire as many projectiles as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-  PointsPerShot: 1
+  PointsPerShot: 3

@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : Hurtable
 {
+	public static event Action OnPlayerDeath;
+	
 	[SerializeField] private float movementSpeed;
 	[SerializeField] private float deathDelay = 3f;
 
@@ -27,6 +30,8 @@ public class PlayerMovement : Hurtable
 
 	public override void Die(float delay = 0)
 	{
+		OnPlayerDeath?.Invoke();
+
 		GameManager.PreviousScore = GameManager.Instance.Score;
 		if (GameManager.PreviousScore > GameManager.BestScore)
 		{
@@ -55,6 +60,7 @@ public class PlayerMovement : Hurtable
 				meshRenderer.enabled = false;
 			}
 		}
+
 		
 		// Never destroy player :)
 		base.Die(999f);

@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: Kill as many enemies as possible
   EntrySoundEffect: {fileID: 0}
   Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
-  PointsPerKill: 10
+  PointsPerKill: 100

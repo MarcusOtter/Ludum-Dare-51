@@ -112,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 5
   explosionCenter: {fileID: 6413212538489905154}
-  explosionRadius: 0
   explosionUpwardModifier: 0.2
   damage: 5
 --- !u!1 &6413212537794629869
@@ -247,11 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bbd7df7e6a408199eb8cc8f901cc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 3
   fireDelayInSeconds: 0.25
   isAutomatic: 0
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 11400000, guid: 5ee1f0c66a3941040b090a998c75d5b3, type: 2}
   animator: {fileID: 7531750617411089513}
+  DestroyOnGolf: 1
   attackCollider: {fileID: 5320090545359755768}
   attackDuration: 0.25
   attackDelay: 0

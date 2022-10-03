@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd095b38db2249daae7277ec4d02c2f0, type: 3}
-  m_Name: Pacman_Waka
+  m_Name: Waka
   m_EditorClassIdentifier: 
   Clips:
   - {fileID: 8300000, guid: 8204f7f9085f7204596eca8e0eb11ced, type: 3}
