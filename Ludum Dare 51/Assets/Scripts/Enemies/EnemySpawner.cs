@@ -11,6 +11,27 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int minEnemiesPerSpawn, maxEnemiesPerSpawn;
     [SerializeField] private float minSpawnInterval, maxSpawnInterval;
 
+    private void OnEnable()
+    {
+        GolfGoal.OnGolfStart += StopSpawning;
+        GolfGoal.OnGolfEnd += StartSpawning;
+    }
+
+    private void OnDisable()
+    {
+        GolfGoal.OnGolfStart -= StopSpawning;
+        GolfGoal.OnGolfEnd -= StartSpawning;
+    }
+
+    void StartSpawning()
+    {
+        Spawning = true;
+    }
+    void StopSpawning()
+    {
+        Spawning = false;
+    }
+
     private void Start()
     {
         StartCoroutine(SpawnEnemies());

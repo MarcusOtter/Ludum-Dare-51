@@ -13,6 +13,16 @@ public class Enemy : MonoBehaviour, IHurtable
     protected bool IsDead;
 
     protected PlayerMovement player;
+
+    private void OnEnable()
+    {
+        GolfGoal.OnGolfStart += Die;
+    }
+    private void OnDisable()
+    {
+        GolfGoal.OnGolfStart -= Die;
+    }
+
     protected virtual void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();

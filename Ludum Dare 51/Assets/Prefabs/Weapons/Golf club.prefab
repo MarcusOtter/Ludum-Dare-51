@@ -112,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 5
   explosionCenter: {fileID: 4802823554446346809}
-  explosionRadius: 5
   explosionUpwardModifier: 1
   damage: 2
 --- !u!1 &4802823554446346814
@@ -199,6 +198,7 @@ MonoBehaviour:
   isAutomatic: 0
   attackSound: {fileID: 0}
   animator: {fileID: 16528992088783155}
+  DestroyOnGolf: 0
   attackCollider: {fileID: 982319880077194476}
   attackDuration: 0.2
   attackDelay: 0.2

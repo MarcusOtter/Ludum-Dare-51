@@ -11,6 +11,8 @@ public abstract class Weapon : MonoBehaviour
 	[SerializeField] protected SoundEffect attackSound;
 	[SerializeField] private Animator animator;
 
+	public bool DestroyOnGolf = true;
+
 	private static int _attackAnimationHash = Animator.StringToHash("Attack");
 
 	public Action<Weapon> OnAttack;
@@ -19,7 +21,23 @@ public abstract class Weapon : MonoBehaviour
 	private FollowTransform _followTransform;
 
 	private float _lastFireTime;
-	
+
+    private void OnEnable()
+    {
+        if(DestroyOnGolf)
+        {
+			GolfGoal.OnGolfStart += DestroySelf;
+        }
+    }
+
+	private void OnDisable()
+	{
+		if (DestroyOnGolf)
+		{
+			GolfGoal.OnGolfStart -= DestroySelf;
+		}
+	}
+
 	protected virtual void Awake()
 	{
 		Rigidbody = GetComponent<Rigidbody>();
@@ -52,8 +70,13 @@ public abstract class Weapon : MonoBehaviour
 		_followTransform.SetTarget(null);
 		Rigidbody.isKinematic = false;
 	}
-	
-	protected virtual bool CanAttack()
+
+    protected void DestroySelf()
+    {
+		Destroy(gameObject);
+    }
+
+    protected virtual bool CanAttack()
 	{
 		return Time.time >= _lastFireTime + fireDelayInSeconds;
 	}

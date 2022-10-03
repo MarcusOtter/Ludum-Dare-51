@@ -43,7 +43,7 @@ public class Hurtable : MonoBehaviour, IHurtable
 		}
 	}
 
-	protected virtual void Die(float delay = 0)
+	public virtual void Die(float delay = 0)
 	{
 		SoundEffectPlayer.PlaySoundEffect(deathSound, transform);
 		if (_animator != null)

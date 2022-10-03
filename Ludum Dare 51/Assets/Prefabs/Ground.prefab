@@ -1927,6 +1927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golf club
       objectReference: {fileID: 0}
+    - target: {fileID: 4802823554446346814, guid: f3984185f5370a443b89cc92e7958b53,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f3984185f5370a443b89cc92e7958b53, type: 3}

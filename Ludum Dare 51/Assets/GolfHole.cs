@@ -10,7 +10,7 @@ public class GolfHole : MonoBehaviour
     {
         if(other.CompareTag("Golf Ball"))
         {
-            Destroy(other.gameObject);
+            other.GetComponent<Hurtable>()?.Die();
             SoundEffectPlayer.PlaySoundEffect(_holedBallSound, transform);
             GameManager.AddPoints(points);
         }
