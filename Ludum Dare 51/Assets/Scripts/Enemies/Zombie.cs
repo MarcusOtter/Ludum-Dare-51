@@ -42,18 +42,6 @@ public class Zombie : EnemyAgent
             baseSelector.children.Add(approachPlayerSequence);
         }
 
-        //{
-        //    Sequence wanderAimlessly = new();
-
-        //    SetTargetNode setCustomTarget = new(_customTarget, this);
-        //    ApproachTarget approach = new(this);
-
-        //    wanderAimlessly.AddChild(setCustomTarget);
-        //    wanderAimlessly.AddChild(approach);
-
-        //    baseSelector.AddChild(wanderAimlessly);
-        //}
-
         root = baseSelector;
     }
 
